@@ -1,0 +1,58 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' href='/public/css/dailyattend-child.css')
+header
+  nav.navbar
+    ul
+      li
+        a(href='#home') Home
+      li
+        a(href='#contact') Contact
+      li
+        a(href='#about') About Us
+      li
+        a(href='#support') Support Us
+.container
+  h2 Daily Attendance Track
+  .attendance-container
+    .attendance-table
+      h3 Child Attendance Field
+      table
+        thead
+          tr
+            th Date
+            th Name
+            th Child Number
+            th Child Brought By
+            th Check-in Time
+            th Child Picked By
+            th Check-out Time
+            th Phone Number
+            th Action
+        tbody
+          tr
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              input(type='text')
+            td
+              button.delete-button Delete
+              button.submit-button Submit
+          // Additional rows can be added here for more data entry
+footer
+  p &copy; 2024 Daily
