@@ -29,20 +29,22 @@ mongoose.connection
  app.set("view engine", "pug"); // setting the view engine to pug
  app.set("views", path.join(__dirname, "views")); //specify the directory where the views are found
 
+ 
+
 
 
 
 //middleware
+app.use(express.static(path.join(__dirname, "public")))// for static files in dir public
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 
-
 //routes
-app.get("/childattend", (req, res)=> {
-   res.render("dailyattend-child")
+app.get("/childRegister", (req, res)=> {
+   res.render("childRegister")
 });
-
 
 
 
