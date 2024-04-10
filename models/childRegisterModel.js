@@ -39,6 +39,8 @@ const childRegisterSchema = new mongoose.Schema({
     },
     image:{
         type: String, 
-    }    
+    }  
 
-})
+});
+
+module.exports = mongoose.model("childRegisterModel", childRegisterSchema)

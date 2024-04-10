@@ -8,10 +8,11 @@ head
   link(rel='stylesheet' href='/css/childRegister.css')
   
 div(w3-include-html='/includes-navbar/navbar.html')
-// form
-.container
+
+
+.container 
   h1 Child Registry
-  form#registrationForm
+  form#registrationForm(action= 'register' method='Post')
     .form-group
       label(for='name') Name:
       input#name(type='text' name='name' required='')

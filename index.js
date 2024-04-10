@@ -6,10 +6,11 @@ const path = require('path'); //for pug
 
 require("dotenv").config();
 
+const registrationRoute = require("./routes/childRegisterRoute")// importing routes
+
 
 //instantiation
 const app = express();
-
 
 
 //configuration
@@ -32,8 +33,6 @@ mongoose.connection
  
 
 
-
-
 //middleware
 app.use(express.static(path.join(__dirname, "public")))// for static files in dir public
 
@@ -41,13 +40,15 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 
+
+
 //routes
 app.get("/childRegister", (req, res)=> {
-   res.render("childRegister")
+  res.render("childRegister")
 });
 
-
-
+//use imported routes
+app.use("/", registrationRoute);
 
 
 
