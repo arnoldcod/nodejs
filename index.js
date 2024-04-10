@@ -31,7 +31,7 @@ mongoose.connection
  app.set("views", path.join(__dirname, "views")); //specify the directory where the views are found
 
  
-
+ 
 
 //middleware
 app.use(express.static(path.join(__dirname, "public")))// for static files in dir public
