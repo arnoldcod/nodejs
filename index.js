@@ -31,7 +31,6 @@ mongoose.connection
  app.set("views", path.join(__dirname, "views")); //specify the directory where the views are found
 
  
- 
 
 //middleware
 app.use(express.static(path.join(__dirname, "public")))// for static files in dir public
@@ -49,6 +48,7 @@ app.get("/childRegister", (req, res)=> {
 
 //use imported routes
 app.use("/", registrationRoute);
+
 
 
 
@@ -129,7 +129,6 @@ app.get('*', (req, res) => {
 
   //always the last line in the code!!!
 app.listen(3000, () => console.log('listening on port 3000'));
-
 
 
 

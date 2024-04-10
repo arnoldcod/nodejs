@@ -3,17 +3,21 @@ const router = express.Router();
 
 
 
-const childRegister = require("../models/childRegisterModel") //import model
+const Childregister = require("../models/childRegisterModel") //import model
 
 router.get("/childRegister", (req, res)=> {
     res.render("childRegister")
  });
 
+
+
  router.post("/childRegister", (req, res)=> {
-    const child = new childRegister(req.body);
+    const child = new Childregister(req.body);
     console.log(child);
     child.save();
+    res.send('success')
     //res.render("childRegister")
  });
 
+ 
  module.exports = router;
