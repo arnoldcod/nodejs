@@ -22,7 +22,7 @@ const childRegisterSchema = new mongoose.Schema({
         trim: true
     },
     contact:{
-        type: String, 
+        type: Number, 
         unique: true
     },
     address:{
@@ -36,10 +36,7 @@ const childRegisterSchema = new mongoose.Schema({
     childNumber:{
         type: String, 
         unique: true
-    },
-    image:{
-        type: String, 
-    }  
+    }
 
 });
 

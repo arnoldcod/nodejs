@@ -42,13 +42,12 @@ app.use(express.json());
 
 
 //routes
-app.get("/childRegister", (req, res)=> {
-  res.render("childRegister")
-});
-
 //use imported routes
-app.use("/", registrationRoute);
+app.use("/", registrationRoute); //from imported routes above
 
+// app.get("/childRegister", (req, res)=> { //renderdatain form from action& sent to db
+//   res.render("childRegister")
+// });
 
 
 
