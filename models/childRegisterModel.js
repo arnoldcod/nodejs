@@ -41,3 +41,4 @@ const childRegisterSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("childRegisterModel", childRegisterSchema)
+

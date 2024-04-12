@@ -19,6 +19,7 @@ const app = express();
   useUnifiedTopology: true,
 });
 
+
 mongoose.connection
   .once("open", () => {
     console.log("mongodb connection successfully open");
@@ -127,7 +128,8 @@ app.get('*', (req, res) => {
 });
 
   //always the last line in the code!!!
-app.listen(3000, () => console.log('listening on port 3000'));
+app.listen(3500, () => console.log('listening on port 3500'));
+
 
 
 
