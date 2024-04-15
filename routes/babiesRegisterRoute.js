@@ -3,17 +3,17 @@ const router = express.Router();
 
 
 
-const ChildRegisterModel = require("../models/childRegisterModel") //import model
+const BabiesRegisterModel = require("../models/babiesRegisterModel") //import model
 
-router.get("/childRegister", (req, res)=> { //to run on the browser and display form on server file
-    res.render("childRegister");  //from childRegister.pug
+router.get("/babiesRegister", (req, res)=> { //to run on the browser and display form on server file
+    res.render("babiesRegister");  //from babiesRegister.pug
  });
 
 
 //post route for form to database
- router.post("/childRegister", async(req, res)=> {
+ router.post("/babiesRegister", async(req, res)=> {
    try {  
-      const child = new ChildRegisterModel(req.body);
+      const child = new BabiesRegisterModel(req.body);
       console.log(child);
       await child.save();
       res.send('success registering a baby!');
@@ -25,5 +25,6 @@ router.get("/childRegister", (req, res)=> { //to run on the browser and display 
    }
    
  });
+
  
  module.exports = router;

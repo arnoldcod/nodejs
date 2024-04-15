@@ -6,7 +6,7 @@ head
   // cdn bootstrap css
   link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css')
 
-  link(rel='stylesheet' href='/z-project/css/babies/babies.css')
+  link(rel='stylesheet' href='/css/babiesRegister.css')
 main#main-div.main-div
   #logo-nav-parent.text-bg-success
     #logo-div.text-color
@@ -90,7 +90,7 @@ main#main-div.main-div
         // content
         .container
           h1 Child Registry
-          form#registrationForm
+          form#registrationForm(action= '/babiesRegister' method='POST')
             .form-group
               label(for='name') Name:
               input#name(type='text' name='name')
@@ -168,4 +168,4 @@ main#main-div.main-div
 script(src='https://kit.fontawesome.com/01943d9418.js' crossorigin='anonymous')
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js')
 script(src='/includes-navbar/navbar.js')
-script(src='/z-project/js/babies/babies.js')
+script(src='')

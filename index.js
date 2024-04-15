@@ -6,9 +6,11 @@ const path = require('path'); //for pug
 
 require("dotenv").config();
 
-const port = process.env.port || 3600  // listening to port
+const port = process.env.port || 3700  // listening to port
 
 const registrationRoute = require("./routes/childRegisterRoute")// importing routes
+
+const babiesregistrationRoute = require("./routes/babiesRegisterRoute")// importing routes
 
 
 //instantiation
@@ -47,6 +49,9 @@ app.use(express.json());
 //routes
 //use imported routes
 app.use("/", registrationRoute); //from imported routes above
+
+app.use("/", babiesregistrationRoute); //from imported routes above
+
 
 // app.get("/childRegister", (req, res)=> { //renderdatain form from action& sent to db
 //   res.render("childRegister")

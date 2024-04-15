@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const childRegisterSchema = new mongoose.Schema({
+const babiesRegisterSchema = new mongoose.Schema({
     name:{
         type: String, 
         trim: true
@@ -33,6 +33,22 @@ const childRegisterSchema = new mongoose.Schema({
         type: String, 
         trim: true
     },
+    childBroughtBy:{
+        type: String, 
+        trim: true
+    },
+    arrivalTime:{
+        type: String, 
+        trim: true
+    },
+    childPickedBy:{
+        type: String, 
+        trim: true
+    },
+    departureTime:{
+        type: String, 
+        trim: true
+    },
     childNumber:{
         type: String, 
         unique: true
@@ -40,6 +56,4 @@ const childRegisterSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("childRegisterModel", childRegisterSchema)
-
-
+module.exports = mongoose.model("babiesRegisterModel", babiesRegisterSchema)
