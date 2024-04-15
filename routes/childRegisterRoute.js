@@ -10,12 +10,20 @@ router.get("/childRegister", (req, res)=> { //to run on the browser and display 
  });
 
 
+//post route for form to database
+ router.post("/childRegister", async(req, res)=> {
+   try {  
+      const child = new ChildRegisterModel(req.body);
+      console.log(child);
+      await child.save();
+      res.send('success registering a baby!');
+       //to display on same page//res.redirect("/childRegister")
 
- router.post("/childRegister", (req, res)=> {
-    const child = new ChildRegisterModel(req.body);
-    console.log(child);
-    child.save();
-    res.send('success!');
+   } catch (error) {
+      res.status(400).send("Sorry something wrong!");
+      console.log("error registering baby...", error );
+   }
+   
  });
 
  
