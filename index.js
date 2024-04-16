@@ -12,6 +12,10 @@ const registrationRoute = require("./routes/childRegisterRoute")// importing rou
 
 const babiesregistrationRoute = require("./routes/babiesRegisterRoute")// importing routes
 
+const sittersRoute = require("./routes/sittersRegisterRoute")// importing routes
+
+
+
 
 //instantiation
 const app = express();
@@ -45,12 +49,14 @@ app.use(express.json());
 
 
 
-
 //routes
-//use imported routes
+/**
+ *! Use imported routes */
 app.use("/", registrationRoute); //from imported routes above
 
 app.use("/", babiesregistrationRoute); //from imported routes above
+
+app.use("/", sittersRoute); //from imported routes above
 
 
 // app.get("/childRegister", (req, res)=> { //renderdatain form from action& sent to db
