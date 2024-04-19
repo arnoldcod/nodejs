@@ -2,20 +2,28 @@
 const express = require('express'); // for posting
 const mongoose = require('mongoose'); // for mongodb
 const path = require('path'); //for pug
-  
+const passport = require('passport'); //for passport
+const expressSession = require('express-session')({ // for express-session
+  secret:"secret",
+  resave: false,
+  saveUninitialized: false
+});
 
 require("dotenv").config();
+
+//routes
+/**
+ *! import register model with user details
+ */
+const CreateAccount= require("./models/createAccountModel");
 
 const port = process.env.port || 3700  // listening to port
 
 const registrationRoute = require("./routes/childRegisterRoute")// importing routes
-
 const babiesregistrationRoute = require("./routes/babiesRegisterRoute")// importing routes
-
 const sittersRoute = require("./routes/sittersRegisterRoute")// importing routes
-
-
-
+const createAdmin = require("./routes/createAccountRoute")// importing routes
+const authenticationRoutes = require("./routes/authenticationRoutes") //importing routes
 
 //instantiation
 const app = express();
@@ -41,22 +49,34 @@ mongoose.connection
 
  
 
-//middleware
+//routes
+/**
+ *! Middleware
+ */
 app.use(express.static(path.join(__dirname, "public")))// for static files in dir public
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
+//Express session  configurations
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
+
+//Passport Configurations
+passport.use(CreateAccount.createStrategy());
+passport.serializeUser(CreateAccount.serializeUser()); //ways of tracking user usage
+passport.deserializeUser(CreateAccount.deserializeUser());//breaking system when user logs out
 
 
-//routes
 /**
- *! Use imported routes */
+ *! Use imported routes from above
+ */
 app.use("/", registrationRoute); //from imported routes above
-
 app.use("/", babiesregistrationRoute); //from imported routes above
-
 app.use("/", sittersRoute); //from imported routes above
+app.use("/", createAdmin); //from imported routes above
+app.use("/", authenticationRoutes);
 
 
 // app.get("/childRegister", (req, res)=> { //renderdatain form from action& sent to db

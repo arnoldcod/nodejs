@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 ////access the schema function in mongoose
 // const Schema = mongoose.schema;
 
+
 ////use function to build schema
 ////all data types like String, Date start with an uppercase
 const sittersRegisterSchema = new mongoose.Schema({

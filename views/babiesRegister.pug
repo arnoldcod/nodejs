@@ -13,7 +13,8 @@ main#main-div.main-div
     #welcome.welcome.text-color.text-bg-success
       h4   DayStar day care Kindergarten 
     #navbar
-      div(w3-include-html='/includes-navbar/navbar.html')
+      div(w3-include-html='/views/navbar.pug')
+       a.btn.btn-primary.p-2( href='#offcanvasExample' role='button') 
   #row1
     div(id='row1-left clearfix')
       a.btn.btn-primary.text-bg-success.p-2(data-bs-toggle='offcanvas' href='#offcanvasExample' role='button' aria-controls='offcanvasExample')
