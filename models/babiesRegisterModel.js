@@ -41,6 +41,10 @@ const babiesRegisterSchema = new mongoose.Schema({
         type: String, 
         trim: true
     },
+    paidFee :{
+        type: String, 
+        trim: true
+    },
     childPickedBy:{
         type: String, 
         trim: true

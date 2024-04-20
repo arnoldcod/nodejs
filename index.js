@@ -19,11 +19,12 @@ const CreateAccount= require("./models/createAccountModel");
 
 const port = process.env.port || 3700  // listening to port
 
-const registrationRoute = require("./routes/childRegisterRoute")// importing routes
+
 const babiesregistrationRoute = require("./routes/babiesRegisterRoute")// importing routes
 const sittersRoute = require("./routes/sittersRegisterRoute")// importing routes
 const createAdmin = require("./routes/createAccountRoute")// importing routes
 const authenticationRoutes = require("./routes/authenticationRoutes") //importing routes
+
 
 //instantiation
 const app = express();
@@ -72,16 +73,12 @@ passport.deserializeUser(CreateAccount.deserializeUser());//breaking system when
 /**
  *! Use imported routes from above
  */
-app.use("/", registrationRoute); //from imported routes above
 app.use("/", babiesregistrationRoute); //from imported routes above
 app.use("/", sittersRoute); //from imported routes above
 app.use("/", createAdmin); //from imported routes above
-app.use("/", authenticationRoutes);
+app.use("/", authenticationRoutes); //from imported routes above
 
 
-// app.get("/childRegister", (req, res)=> { //renderdatain form from action& sent to db
-//   res.render("childRegister")
-// });
 
 
 
