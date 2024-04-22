@@ -24,6 +24,10 @@ const babiesregistrationRoute = require("./routes/babiesRegisterRoute")// import
 const sittersRoute = require("./routes/sittersRegisterRoute")// importing routes
 const createAdmin = require("./routes/createAccountRoute")// importing routes
 const authenticationRoutes = require("./routes/authenticationRoutes") //importing routes
+const index = require("./routes/indexRoute")// importing routes
+const landing = require("./routes/landingRoute")// importing routes
+const dashboard = require("./routes/maindashboardRoute")// importing routes
+const pay = require("./routes/paymentRoute")// importing routes
 
 
 //instantiation
@@ -77,6 +81,12 @@ app.use("/", babiesregistrationRoute); //from imported routes above
 app.use("/", sittersRoute); //from imported routes above
 app.use("/", createAdmin); //from imported routes above
 app.use("/", authenticationRoutes); //from imported routes above
+app.use("/", index);
+app.use("/", landing);
+app.use("/", dashboard);
+app.use("/", pay);
+
+
 
 
 

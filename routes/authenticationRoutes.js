@@ -3,12 +3,12 @@ const router = express.Router();
 const passport = require("passport");
 
 router.get("/login", (req, res)=> {
-    res.render("index-login") /////from inde-login.pug
+    res.render("login") /////from inde-login.pug
 })
 
 router.post("/login", passport.authenticate("local", {failureRedirect: "/login"}), 
 (req, res)=> {
-   res.redirect("/babiesRegister") ////for baby registration
+   res.redirect("/dashboard") ////for baby registration
 })
 
 router.get("/logout", (req, res)=> {
