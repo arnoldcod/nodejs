@@ -13,10 +13,11 @@ main#main-div.main-divages/sitters
       h4   DayStar day care Kindergarten 
     #navbar
       div(w3-include-html='/includes-navbar/navbar.html')
+       a.btn.btn-danger.p-2( href='/logout' role='button') logout
   #row1
     div(id='row1-left clearfix')
       a.btn.btn-primary.text-bg-success.p-2(data-bs-toggle='offcanvas' href='#offcanvasExample' role='button' aria-controls='offcanvasExample')
-        | click Here to open canvas
+        | click Here to open dashboard
       #offcanvasExample.offcanvas.offcanvas-start(tabindex='-1' aria-labelledby='offcanvasExampleLabel')
         .offcanvas-header
           h2#offcanvasExampleLabel.offcanvas-title Administration
@@ -33,7 +34,7 @@ main#main-div.main-divages/sitters
               | Manage Babies
             ul.dropdown-menu
               li
-                a.dropdown-item.text-bg-light(href='/pages/babies/babies.html') Register new baby
+                a.dropdown-item.text-bg-light(href='/babiesRegister') Register new baby
               li
                 a.dropdown-item.text-bg-success(href='#') view all babies
               li
@@ -45,7 +46,7 @@ main#main-div.main-divages/sitters
               | Manage Sitters
             ul.dropdown-menu
               li
-                a.dropdown-item.text-bg-light(href='/pages/sitters/sitters.html') View all sitters
+                a.dropdown-item.text-bg-light(href='/sitters') View all sitters
               li
                 a.dropdown-item.text-bg-success(href='#') Add new sitter
               li
@@ -57,7 +58,7 @@ main#main-div.main-divages/sitters
               | Manage Payments
             ul.dropdown-menu
               li
-                a.dropdown-item.text-bg-light(href='/pages/payments/payments.html') View payment history
+                a.dropdown-item.text-bg-light(href='/pay') View payment history
               li
                 a.dropdown-item.text-bg-success(href='#') Make payment
               li

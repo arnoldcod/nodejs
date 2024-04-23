@@ -1,18 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const passport = require("passport");
+const connectEnsureLogin = require("connect-ensure-login");
 
 
 const CreateAccountModel = require("../models/createAccountModel"); //import model
-const { error } = require("console");
 
-router.get("/createAccount", (req, res)=> { //to run on the browser and display form on server file
-    res.render("createAccount");  //from createAccount.pug
+
+router.get("/createAccount",  connectEnsureLogin.ensureLoggedIn(), (req, res)=> { //to run on the browser and display form on server file
+    res.render("signup");  //from createAccount.pug
  });
 
 
 
 ////post route for form to database
- router.post("/createAccount", async(req, res)=> {
+ router.post("/createAccount",  connectEnsureLogin.ensureLoggedIn(), async(req, res)=> {
    try {  
       const adminRegister = new CreateAccountModel(req.body);
     

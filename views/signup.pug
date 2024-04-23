@@ -18,13 +18,16 @@ main#main-div.main-div
       // content
       .container
         h1 Create Account
-        form#registrationForm
+        form#registrationForm(action= '/createAccount' method='POST')
           .form-group
             label(for='name') Name:
             input#name(type='text' name='name')
           .form-group
-            label(for='dob') Date of Birth:
-            input#dob(type='date' name='dob')
+            label(for='email') E-mail:
+            input#email(type='email' name='email')
+          .form-group
+            label(for='password') Password:
+            input#name(type='password' name='password')
           .form-group
             label(for='age') Age:
             input#age(type='number' name='age')
@@ -38,9 +41,7 @@ main#main-div.main-div
           .form-group
             label(for='contact') Contact:
             input#contact(type='text' name='contact')
-          .form-group
-            label(for='paidFee')  Paid Fee(UGX):
-            input#paidFee(type='text' name='paidFee')
+         
           .form-group
             label(for='address') Address:
             input#address(type='text' name='address')
@@ -56,9 +57,6 @@ main#main-div.main-div
           .form-group
             label(for='levelOfEducation') Level of Education:
             input#levelOfEducation(type='text' name='levelOfEducation')
-          .form-group
-            label(for='email') E-mail:
-            input#email(type='text' name='email')
           input.text-bg-success(type='submit' value='Register')
   #footer
     .fid_box1
